@@ -1,0 +1,12 @@
+{
+  "name": "3.2-opp",
+  "version": "1.0.0",
+  "description": "Minimal TypeScript/browser project.",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "npx http-server . -c-1 -p 5173",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "type": "module"
+}
