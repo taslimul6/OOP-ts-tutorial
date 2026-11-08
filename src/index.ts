@@ -1,26 +1,38 @@
-
 class Employee {
-  constructor (public name: string, 
-    private _baseSalary: number)
-{}
+  constructor(
+    public name: string,
+    private _baseSalary: number,
+  ) {}
 
+  get baseSalary(): number {
+    return this._baseSalary;
+  }
 
-get baseSalary(): number{
-  return this._baseSalary;
+  set baseSalary(newSalary: number) {
+    this._baseSalary = newSalary;
+  }
+
+  describe(): string {
+    return `Name is ${this.name} , salary${this._baseSalary}`;
+  }
 }
 
-set baseSalary(newSalary: number){
-   this._baseSalary = newSalary;
+//
+const hasan = new Employee("Hasan", 2500);
+const habib = new Employee("habibi", 2800);
+
+class Manager extends Employee {
+  constructor(
+    name: string, 
+    _baseSalary: number, 
+    public teamMemberCount: number) {
+    super(name, _baseSalary);
+  }
+  describeWork():string{
+    return `${this.name} manages total ${this.teamMemberCount} persons`
+  }
 }
 
-}
-const hasan = new Employee('Hasan' , 2500);
-const habib = new Employee('habibi' , 2800);
+const mizan = new Manager("mizan", 7800,25);
 
-hasan.name= "taslimul "
-hasan.baseSalary =2500000;
-
-
-
-
-console.log(hasan)
+console.log(mizan.describeWork());
